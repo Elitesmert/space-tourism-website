@@ -46,19 +46,19 @@ const Header = () => {
         </div>
 
         <ul className='flex flex-col font-barlow-condensed pl-8 gap-8'>
-          <Link to='/' className='flex text-base gap-3'>
+          <Link onClick={toggleMenu} to='/' className='flex text-base gap-3'>
             <span className='font-bold'>00</span>
             <li className='uppercase'>HOME</li>
           </Link>
-          <Link to='/' className='flex text-base gap-3'>
+          <Link onClick={toggleMenu} to='/moons' className='flex text-base gap-3'>
             <span className='font-bold'>01</span>
             <li className='uppercase'>DESTINATION</li>
           </Link>
-          <Link to='/' className='flex text-base gap-3'>
+          <Link onClick={toggleMenu} to='/' className='flex text-base gap-3'>
             <span className='font-bold'>02</span>
             <li className='uppercase'>CREW</li>
           </Link>
-          <Link to='/' className='flex text-base gap-3'>
+          <Link onClick={toggleMenu} to='/' className='flex text-base gap-3'>
             <span className='font-bold'>03</span>
             <li className='uppercase'>TECHNOLOGY</li>
           </Link>
