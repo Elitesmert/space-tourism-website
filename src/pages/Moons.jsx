@@ -4,14 +4,13 @@ import { useState } from 'react'
 
 const Moons = () => {
   const [selectedMoon, setSelectedMoon] = useState(1)
-  console.log(selectedMoon)
+
   const containerStyle = {
     backgroundImage: 'url("./assets/destination/background-destination-mobile.jpg")',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    minHeight: '100vh', // Bu, sayfanın tamamını kaplaması için gerekli olabilir
-    // Diğer stil özellikleri buraya eklenebilir
+    minHeight: '100vh',
   }
 
   const moons = [
@@ -71,13 +70,13 @@ const Moons = () => {
         })}
       </div>
       <div className='flex flex-col'>
-        <ul className='flex gap-[26px] items-center justify-center font-barlow-condensed tracking-[2.362px] text-sm mb-5 z-0'>
+        <ul className='flex gap-[26px] items-center justify-center font-barlow-condensed tracking-[2.362px] text-sm mb-5'>
           {moons.map((item) => (
             <li
               key={item.id}
               onClick={() => setSelectedMoon(item.id)}
               className={classNames('relative ', {
-                'after:content-[""] after:block after:absolute after:bg-white after:h-1 after:w-full after:-bottom-2 after:left-0':
+                'before:content-[""] before:block before:absolute before:bg-white before:h-1 before:w-full before:-bottom-2 before:left-0':
                   item.id === selectedMoon,
               })}
             >

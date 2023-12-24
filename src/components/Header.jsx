@@ -13,7 +13,9 @@ const Header = () => {
   return (
     <header className='px-6 pt-6 flex justify-between items-center fixed w-full'>
       <div>
-        <img src='./assets/shared/logo.svg' alt='' className='w-10 h-10' />
+        <Link to='/'>
+          <img src='./assets/shared/logo.svg' alt='' className='w-10 h-10' />
+        </Link>
       </div>
 
       <div>
@@ -54,7 +56,7 @@ const Header = () => {
             <span className='font-bold'>01</span>
             <li className='uppercase'>DESTINATION</li>
           </Link>
-          <Link onClick={toggleMenu} to='/' className='flex text-base gap-3'>
+          <Link onClick={toggleMenu} to='/crew' className='flex text-base gap-3'>
             <span className='font-bold'>02</span>
             <li className='uppercase'>CREW</li>
           </Link>

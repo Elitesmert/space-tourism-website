@@ -1,4 +1,5 @@
 import App from '@/App'
+import Crew from '@/pages/Crew'
 import Home from '@/pages/Home'
 import Moons from '@/pages/Moons'
 import NotFound from '@/pages/NotFound'
@@ -17,6 +18,10 @@ const routes = createBrowserRouter([
       {
         path: 'moons',
         element: <Moons />,
+      },
+      {
+        path: '/crew',
+        element: <Crew />,
       },
     ],
   },
