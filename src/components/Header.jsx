@@ -10,52 +10,72 @@ const Header = () => {
   }
 
   return (
-    <header className='px-6 pt-6 xs:pt-0 xs:px-0 xs:pl-12 flex justify-between items-center fixed w-full'>
+    <header className='px-6 pt-6 xs:pt-0 xs:px-0 xs:pl-12 flex justify-between items-center fixed w-full md:mt-10'>
       <div>
         <Link to='/'>
           <img src='./assets/shared/logo.svg' alt='' className='w-10 h-10 xs:w-12 xs:h-12' />
         </Link>
       </div>
-      <div className='hidden xs:block bg-black/5 backdrop-blur-[40px] h-24 px-12'>
-        <ul className='hidden xs:flex gap-8 font-barlow-condensed text-sm h-full tracking-[2.362px]'>
+      <div className='h-[1px] bg-white/25 absolute w-[37%] left-[11.1%] z-10 hidden md:block' />
+      <div className='hidden xs:block bg-black/5 backdrop-blur-[40px] h-24 px-12 md:pr-[167px] md:pl-[123px]'>
+        <ul className='hidden xs:flex gap-8 font-barlow-condensed text-sm md:text-base h-full tracking-[2.362px]'>
           <NavLink
             to='/'
             className={({ isActive }) =>
-              classNames('flex h-full hover:border-b hover:border-b-white/50', {
-                'border-b': isActive,
-              })
+              classNames(
+                'flex h-full border-b-3 border-b-transparent hover:border-b-white/50 items-center gap-[11px]',
+                {
+                  'border-b-white': isActive,
+                }
+              )
             }
           >
+            <span className='hidden md:block'>00</span>
             <li className='uppercase self-center'>HOME</li>
           </NavLink>
           <NavLink
             to='/moons'
             className={({ isActive }) =>
-              classNames('flex h-full hover:border-b hover:border-b-white/50', {
-                'border-b': isActive,
-              })
+              classNames(
+                'flex h-full border-b-3 border-b-transparent hover:border-b-white/50 items-center gap-[11px]',
+                {
+                  'border-b-white': isActive,
+                }
+              )
             }
           >
+            {' '}
+            <span className='hidden md:block'>01</span>
             <li className='uppercase self-center'>DESTINATION</li>
           </NavLink>
           <NavLink
             to='/crew'
             className={({ isActive }) =>
-              classNames('flex h-full hover:border-b hover:border-b-white/50', {
-                'border-b': isActive,
-              })
+              classNames(
+                'flex h-full border-b-3 border-b-transparent hover:border-b-white/50 items-center gap-[11px]',
+                {
+                  'border-b-white': isActive,
+                }
+              )
             }
           >
+            {' '}
+            <span className='hidden md:block'>02</span>
             <li className='uppercase self-center'>CREW</li>
           </NavLink>
           <NavLink
             to='/technology'
             className={({ isActive }) =>
-              classNames('flex h-full hover:border-b hover:border-b-white/50', {
-                'border-b': isActive,
-              })
+              classNames(
+                'flex h-full border-b-3 border-b-transparent hover:border-b-white/50 items-center gap-[11px]',
+                {
+                  'border-b-white': isActive,
+                }
+              )
             }
           >
+            {' '}
+            <span className='hidden md:block'>03</span>
             <li className='uppercase self-center'>TECHNOLOGY</li>
           </NavLink>
         </ul>

@@ -37,7 +37,7 @@ const Crew = () => {
   ]
 
   return (
-    <div className='bg-[url("/assets/crew/background-crew-mobile.jpg")] xs:bg-[url("/assets/crew/background-crew-tablet.jpg")] md:bg-[url("/assets/crew/background-crew-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen  pt-[88px] px-6 xs:px-9 xs:pt-[136px]'>
+    <div className='bg-[url("/assets/crew/background-crew-mobile.jpg")] xs:bg-[url("/assets/crew/background-crew-tablet.jpg")] md:bg-[url("/assets/crew/background-crew-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen  pt-[88px] px-6 xs:px-9 xs:pt-[136px] md:pt-[212px] md:px-[165px]'>
       <div className='mb-8 xs:mb-[60px]'>
         <h2 className='font-barlow-condensed flex gap-[18px] justify-center tracking-[2.7px] xs:tracking-[3.375px] uppercase xs:justify-start xs:text-xl'>
           <span className='font-bold opacity-25'>02</span>
@@ -45,15 +45,15 @@ const Crew = () => {
         </h2>
       </div>
 
-      <div className='flex flex-col xs:flex-col-reverse items-center gap-8'>
-        <div className='border-b-[#383B4B] w-full h-[223px] xs:h-[532px] xs:border-none border-b'>
+      <div className='flex flex-col xs:flex-col-reverse items-center gap-8 md:grid md:grid-cols-2 md:grid-rows-3 md:gap-x-20'>
+        <div className='border-b-[#383B4B] w-full h-[223px] xs:h-[532px] xs:border-none border-b md:row-span-3 md:col-start-2 md:row-start-1'>
           <div
             style={{ backgroundImage: `url(${crew[currentCrew - 1].image})` }}
             className='bg-contain bg-no-repeat w-full h-full bg-center duration-300 ease-linear'
           />
         </div>
 
-        <div className='flex gap-4'>
+        <div className='flex gap-4 md:col-start-1 md:row-start-3'>
           {crew.map((item) => (
             <div
               key={item.id}
@@ -68,14 +68,19 @@ const Crew = () => {
         {crew.map((item) => {
           if (item.id === currentCrew) {
             return (
-              <div key={item.id} className='flex flex-col items-center xs:gap-2 xs:h-[182px]'>
-                <h2 className='uppercase text-white/50 font-bellefair text-base mb-2 xs:text-2xl'>
+              <div
+                key={item.id}
+                className='flex flex-col items-center xs:gap-2 xs:h-[182px] md:-[712px] md:col-start-1 md:row-span-2 md:items-start md:h-[271px] md:self-end md:justify-between'
+              >
+                <h2 className='uppercase text-white/50 font-bellefair text-base mb-2 xs:text-2xl md:text-[32px]'>
                   {item.role}
                 </h2>
-                <h1 className='text-2xl font-bellefair uppercase mb-4 xs:text-[40px] xs:mb-4'>
+                <h1 className='text-2xl font-bellefair uppercase mb-4 xs:text-[40px] xs:mb-4 md:text-[56px] md:leading-none'>
                   {item.name}
                 </h1>
-                <p className='text-lightBlue text-center xs:text-base'>{item.desc}</p>
+                <p className='text-lightBlue text-center xs:text-base md:text-start md:text-lg'>
+                  {item.desc}
+                </p>
               </div>
             )
           }

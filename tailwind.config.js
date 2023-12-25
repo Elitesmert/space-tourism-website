@@ -21,6 +21,13 @@ export default {
         xs: '426px',
         md: '769px',
       },
+      gridTemplateColumns: {
+        'auto-fit-164': 'repeat(auto-fill, minmax(164px, 1fr))',
+        'auto-fit-220': 'repeat(auto-fill, minmax(220px, 1fr))',
+        'auto-fit-280': 'repeat(auto-fill, minmax(280px, 1fr))',
+        main: 'max-content, 1fr',
+        tech: 'max-content 1fr max-content',
+      },
     },
   },
   darkMode: 'class',

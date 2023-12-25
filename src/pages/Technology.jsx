@@ -35,19 +35,19 @@ const Moons = () => {
     },
   ]
   return (
-    <div className='bg-[url("/assets/technology/background-technology-mobile.jpg")] xs:bg-[url("/assets/technology/background-technology-tablet.jpg")] md:bg-[url("/assets/technology/background-technology-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen pt-[88px] xs:pt-[136px]'>
-      <div className='mb-8 xs:pl-9'>
+    <div className='bg-[url("/assets/technology/background-technology-mobile.jpg")] xs:bg-[url("/assets/technology/background-technology-tablet.jpg")] md:bg-[url("/assets/technology/background-technology-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen pt-[88px] xs:pt-[136px] md:pt-[212px] '>
+      <div className='mb-8 xs:pl-9 md:px-[165px]'>
         <h2 className='font-barlow-condensed flex gap-[18px] justify-center tracking-[2.7px] xs:tracking-[3.375px] uppercase xs:justify-start xs:text-xl'>
           <span className='font-bold opacity-25'>03</span>
           Meet your crew
         </h2>
       </div>
 
-      <div className='flex flex-col items-center gap-8'>
-        <div className='w-full h-[223px] xs:h-[310px]'>
+      <div className='flex flex-col items-center gap-8 md:grid md:grid-cols-tech md:grid-rows-1 md:pl-[165px]'>
+        <div className='w-full h-[223px] xs:h-[310px] md:w-[512px] md:h-[527px]'>
           <div
             className={classNames(
-              'bg-contain bg-no-repeat w-full h-full bg-center xs:bg-cover duration-300 ease-in-out',
+              'bg-contain bg-no-repeat w-full h-full bg-center xs:bg-cover duration-300 ease-in-out md:col-start-3 md:row-start-1',
               {
                 'bg-[url("/assets/technology/image-launch-vehicle-landscape.jpg")]':
                   currentTech === 1,
@@ -64,13 +64,13 @@ const Moons = () => {
           />
         </div>
 
-        <div className='flex gap-4'>
+        <div className='flex gap-4 md:col-start-1 md:row-start-1 md:flex-col md:gap-8'>
           {tech.map((item) => (
             <div
               key={item.id}
               onClick={() => setCurrentTech(item.id)}
               className={classNames(
-                'w-10 h-10 xs:w-[60px] xs:h-[60px] rounded-full bg-transparent flex items-center justify-center font-bellefair border border-white/25 hover:border-white cursor-pointer xs:text-2xl',
+                'w-10 h-10 xs:w-[60px] xs:h-[60px] md:w-20 md:h-20 rounded-full bg-transparent flex items-center justify-center font-bellefair border border-white/25 hover:border-white cursor-pointer xs:text-2xl',
                 {
                   '!bg-white text-black !border-transparent': item.id === currentTech,
                 }
@@ -84,14 +84,19 @@ const Moons = () => {
         {tech.map((item) => {
           if (item.id === currentTech) {
             return (
-              <div key={item.id} className='flex flex-col items-center xs:gap-4 xs:px-36'>
+              <div
+                key={item.id}
+                className='flex flex-col items-center xs:gap-4 xs:px-36 md:col-start-2 md:row-start-1 md:items-start md:px-0 md:px-20'
+              >
                 <h2 className='uppercase text-lightBlue font-barlow-condensed text-sm mb-2 tracking-[2.362px] xs:tracking-[2.7 px] xs:text-base'>
                   THE TERMINOLOGY…
                 </h2>
                 <h1 className='text-2xl font-bellefair uppercase mb-4 xs:text-[40px]'>
                   {item.title}
                 </h1>
-                <p className='text-lightBlue text-center text-[15px] xs:text-base'>{item.desc}</p>
+                <p className='text-lightBlue text-center text-[15px] xs:text-base md:text-start'>
+                  {item.desc}
+                </p>
               </div>
             )
           }

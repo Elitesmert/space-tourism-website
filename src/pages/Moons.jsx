@@ -48,71 +48,76 @@ const Moons = () => {
     },
   ]
   return (
-    <div className='bg-[url("/assets/destination/background-destination-mobile.jpg")] xs:bg-[url("/assets/destination/background-destination-tablet.jpg")] md:bg-[url("/assets/destination/background-destination-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen pt-[88px] px-6 xs:px-9 xs:pt-[136px]'>
-      <div className='w-full mb-10'>
+    <div className='bg-[url("/assets/destination/background-destination-mobile.jpg")] xs:bg-[url("/assets/destination/background-destination-tablet.jpg")] md:bg-[url("/assets/destination/background-destination-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen pt-[88px] px-6 xs:px-9 xs:pt-[136px] md:pt-[212px] md:px-[165px]'>
+      <div className='w-full mb-10 md:mb-16'>
         <h2 className='font-barlow-condensed flex gap-[18px] justify-center tracking-[2.7px] xs:tracking-[3.375px] uppercase xs:justify-start xs:text-xl'>
           <span className='font-bold opacity-25'>01</span>
           Pick your destination
         </h2>
       </div>
-      <div className='flex justify-center items-center mb-8 xs:mb-12'>
-        {moons.map((item) => {
-          if (item.id === selectedMoon) {
-            return (
-              <img
-                key={item.id}
-                src={item.image}
-                alt={item.name}
-                className='w-[200px] h-[200px] xs:w-[300px] xs:h-[300px]'
-              />
-            )
-          }
-        })}
-      </div>
-      <div className='flex flex-col xs:px-14'>
-        <ul className='flex gap-[26px] items-center justify-center font-barlow-condensed tracking-[2.362px] text-sm xs:text-base mb-5 cursor-pointer'>
-          {moons.map((item) => (
-            <li
-              key={item.id}
-              onClick={() => setSelectedMoon(item.id)}
-              className={classNames(
-                'border-b-3 border-b-transparent hover:border-b-white/50 pb-3 transition-colors',
-                {
-                  ' !border-b-white': item.id === selectedMoon,
-                }
-              )}
-            >
-              <h3
-                className={classNames('text-lightBlue', {
-                  'text-white': item.id === selectedMoon,
-                })}
-              >
-                {item.name}
-              </h3>
-            </li>
-          ))}
-        </ul>
 
-        <div>
+      <div className='md:grid md:grid-cols-main gap-x-32'>
+        <div className='flex justify-center items-center mb-8 xs:mb-12'>
           {moons.map((item) => {
             if (item.id === selectedMoon) {
               return (
-                <div key={item.id} className='flex flex-col items-center'>
-                  <h1 className='text-[56px] font-bellefair uppercase'>{item.name}</h1>
-                  <p className='text-lightBlue text-center border-b pb-8 border-b-[#383B4B] mb-8'>
+                <img
+                  key={item.id}
+                  src={item.image}
+                  alt={item.name}
+                  className='w-[200px] h-[200px] xs:w-[300px] xs:h-[300px] md:w-[445px] md:h-[445px]'
+                />
+              )
+            }
+          })}
+        </div>
+        <div className='flex flex-col xs:px-14 md:items-start'>
+          <ul className='flex gap-[26px] items-center justify-center font-barlow-condensed tracking-[2.362px] md:tracking-[2.7px] text-sm xs:text-base mb-5 cursor-pointer'>
+            {moons.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => setSelectedMoon(item.id)}
+                className={classNames(
+                  'border-b-3 border-b-transparent hover:border-b-white/50 pb-3 transition-colors',
+                  {
+                    ' !border-b-white': item.id === selectedMoon,
+                  }
+                )}
+              >
+                <h3
+                  className={classNames('text-lightBlue', {
+                    'text-white': item.id === selectedMoon,
+                  })}
+                >
+                  {item.name}
+                </h3>
+              </li>
+            ))}
+          </ul>
+
+          {moons.map((item) => {
+            if (item.id === selectedMoon) {
+              return (
+                <div key={item.id} className='flex flex-col items-center md:items-start'>
+                  <h1 className='text-[56px] font-bellefair uppercase md:text-[100px]'>
+                    {item.name}
+                  </h1>
+                  <p className='text-lightBlue text-center border-b pb-8 border-b-[#383B4B] mb-8 md:text-lg md:text-start'>
                     {item.desc}
                   </p>
-                  <div className='uppercase flex flex-col items-center gap-3 mb-8'>
-                    <h3 className='font-barlow-condensed tracking-[2.362px] text-sm text-lightBlue'>
-                      avg. distance
-                    </h3>
-                    <h2 className='text-[28px] font-bellefair'>{item.ad}</h2>
-                  </div>
-                  <div className='uppercase flex flex-col items-center gap-3'>
-                    <h3 className='font-barlow-condensed tracking-[2.362px] text-sm text-lightBlue'>
-                      est. travel time
-                    </h3>
-                    <h2 className='text-[28px] font-bellefair'>{item.tm}</h2>
+                  <div className='md:flex gap-20'>
+                    <div className='uppercase flex flex-col items-center gap-3 mb-8 md:mb-0 md:items-start'>
+                      <h3 className='font-barlow-condensed tracking-[2.362px] text-sm text-lightBlue'>
+                        avg. distance
+                      </h3>
+                      <h2 className='text-[28px] font-bellefair'>{item.ad}</h2>
+                    </div>
+                    <div className='uppercase flex flex-col items-center gap-3 md:items-start'>
+                      <h3 className='font-barlow-condensed tracking-[2.362px] text-sm text-lightBlue'>
+                        est. travel time
+                      </h3>
+                      <h2 className='text-[28px] font-bellefair'>{item.tm}</h2>
+                    </div>
                   </div>
                 </div>
               )
