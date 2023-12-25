@@ -4,7 +4,7 @@ The project includes only design. It is a web application that I designed for se
 
 ## Screenshots
 
-![App Screenshot](https://res.cloudinary.com/ddlu6plcm/image/upload/v1703408088/gl4ikby9cn4mhrhlcfkm.png)
+![App Screenshot](https://res.cloudinary.com/ddlu6plcm/image/upload/v1703504182/ss8fnpjyixbhhy5qmqti.png)
 
 ## Installation
 
