@@ -86,7 +86,7 @@ const Moons = () => {
             return (
               <div
                 key={item.id}
-                className='flex flex-col items-center xs:gap-4 xs:px-36 md:col-start-2 md:row-start-1 md:items-start md:px-0 md:px-20'
+                className='flex flex-col items-center xs:gap-4 xs:px-36 md:col-start-2 md:row-start-1 md:items-start md:px-20'
               >
                 <h2 className='uppercase text-lightBlue font-barlow-condensed text-sm mb-2 tracking-[2.362px] xs:tracking-[2.7 px] xs:text-base'>
                   THE TERMINOLOGY…
