@@ -24,7 +24,7 @@ const Header = () => {
             src='./assets/shared/icon-hamburger.svg'
             alt=''
             onClick={toggleMenu}
-            className={classNames('cursor-pointer', {
+            className={classNames('cursor-pointer xs:hidden', {
               hidden: isOpen,
             })}
           />
@@ -60,7 +60,7 @@ const Header = () => {
             <span className='font-bold'>02</span>
             <li className='uppercase'>CREW</li>
           </Link>
-          <Link onClick={toggleMenu} to='/' className='flex text-base gap-3'>
+          <Link onClick={toggleMenu} to='/technology' className='flex text-base gap-3'>
             <span className='font-bold'>03</span>
             <li className='uppercase'>TECHNOLOGY</li>
           </Link>

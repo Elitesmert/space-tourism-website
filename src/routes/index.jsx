@@ -3,6 +3,7 @@ import Crew from '@/pages/Crew'
 import Home from '@/pages/Home'
 import Moons from '@/pages/Moons'
 import NotFound from '@/pages/NotFound'
+import Technology from '@/pages/Technology'
 import { createBrowserRouter } from 'react-router-dom'
 
 const routes = createBrowserRouter([
@@ -22,6 +23,10 @@ const routes = createBrowserRouter([
       {
         path: '/crew',
         element: <Crew />,
+      },
+      {
+        path: '/technology',
+        element: <Technology />,
       },
     ],
   },

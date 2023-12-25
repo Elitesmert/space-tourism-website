@@ -18,7 +18,7 @@ export default {
         bellefair: ['Bellefair', 'serif'],
       },
       screens: {
-        xs: '425px',
+        xs: '426px',
       },
     },
   },

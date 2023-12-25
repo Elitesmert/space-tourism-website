@@ -72,21 +72,19 @@ const Crew = () => {
           ))}
         </div>
 
-        <div className='flex flex-col items-center'>
-          {crew.map((item) => {
-            if (item.id === currentCrew) {
-              return (
-                <>
-                  <h2 className='uppercase text-white/50 font-bellefair text-base mb-2'>
-                    {item.role}
-                  </h2>
-                  <h1 className='text-2xl font-bellefair uppercase mb-4'>{item.name}</h1>
-                  <p className='text-lightBlue text-center'>{item.desc}</p>
-                </>
-              )
-            }
-          })}
-        </div>
+        {crew.map((item) => {
+          if (item.id === currentCrew) {
+            return (
+              <div key={item.id} className='flex flex-col items-center'>
+                <h2 className='uppercase text-white/50 font-bellefair text-base mb-2'>
+                  {item.role}
+                </h2>
+                <h1 className='text-2xl font-bellefair uppercase mb-4'>{item.name}</h1>
+                <p className='text-lightBlue text-center'>{item.desc}</p>
+              </div>
+            )
+          }
+        })}
       </div>
     </div>
   )
