@@ -5,13 +5,6 @@ import { useState } from 'react'
 const Crew = () => {
   const [currentCrew, setCurrentCrew] = useState(1)
 
-  const containerStyle = {
-    backgroundImage: 'url("./assets/crew/background-crew-mobile.jpg")',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    minHeight: '100vh',
-  }
   const crew = [
     {
       id: 1,
@@ -44,16 +37,16 @@ const Crew = () => {
   ]
 
   return (
-    <div style={containerStyle} className='pt-[88px] px-6'>
-      <div className='mb-8'>
-        <h2 className='font-barlow-condensed flex gap-[18px] justify-center tracking-[2.7px] uppercase'>
+    <div className='bg-[url("/assets/crew/background-crew-mobile.jpg")] xs:bg-[url("/assets/crew/background-crew-tablet.jpg")] md:bg-[url("/assets/crew/background-crew-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen  pt-[88px] px-6 xs:px-9 xs:pt-[136px]'>
+      <div className='mb-8 xs:mb-[60px]'>
+        <h2 className='font-barlow-condensed flex gap-[18px] justify-center tracking-[2.7px] xs:tracking-[3.375px] uppercase xs:justify-start xs:text-xl'>
           <span className='font-bold opacity-25'>02</span>
           Meet your crew
         </h2>
       </div>
 
-      <div className='flex flex-col items-center gap-8'>
-        <div className='border-b-[#383B4B] w-full h-[223px] border-b'>
+      <div className='flex flex-col xs:flex-col-reverse items-center gap-8'>
+        <div className='border-b-[#383B4B] w-full h-[223px] xs:h-[532px] xs:border-none border-b'>
           <div
             style={{ backgroundImage: `url(${crew[currentCrew - 1].image})` }}
             className='bg-contain bg-no-repeat w-full h-full bg-center duration-300 ease-linear'
@@ -75,12 +68,14 @@ const Crew = () => {
         {crew.map((item) => {
           if (item.id === currentCrew) {
             return (
-              <div key={item.id} className='flex flex-col items-center'>
-                <h2 className='uppercase text-white/50 font-bellefair text-base mb-2'>
+              <div key={item.id} className='flex flex-col items-center xs:gap-2 xs:h-[182px]'>
+                <h2 className='uppercase text-white/50 font-bellefair text-base mb-2 xs:text-2xl'>
                   {item.role}
                 </h2>
-                <h1 className='text-2xl font-bellefair uppercase mb-4'>{item.name}</h1>
-                <p className='text-lightBlue text-center'>{item.desc}</p>
+                <h1 className='text-2xl font-bellefair uppercase mb-4 xs:text-[40px] xs:mb-4'>
+                  {item.name}
+                </h1>
+                <p className='text-lightBlue text-center xs:text-base'>{item.desc}</p>
               </div>
             )
           }

@@ -5,14 +5,14 @@ import { useState } from 'react'
 const Moons = () => {
   const [selectedMoon, setSelectedMoon] = useState(1)
 
-  const containerStyle = {
-    backgroundImage: 'url("./assets/destination/background-destination-mobile.jpg")',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    minHeight: '100vh',
-  }
+  const bgImage = [
+    { image: './assets/destination/background-destination-tablet.jpg' },
+    {
+      image: './assets/destination/background-destination-desktop.jpg',
+    },
+  ]
 
+  console.log(bgImage)
   const moons = [
     {
       id: 1,
@@ -48,14 +48,14 @@ const Moons = () => {
     },
   ]
   return (
-    <div style={containerStyle} className='pt-[88px] px-6'>
+    <div className='bg-[url("/assets/destination/background-destination-mobile.jpg")] xs:bg-[url("/assets/destination/background-destination-tablet.jpg")] md:bg-[url("/assets/destination/background-destination-desktop.jpg")] bg-cover bg-no-repeat bg-center min-h-screen pt-[88px] px-6 xs:px-9 xs:pt-[136px]'>
       <div className='w-full mb-10'>
-        <h2 className='font-barlow-condensed flex gap-[18px] justify-center tracking-[2.7px] uppercase'>
+        <h2 className='font-barlow-condensed flex gap-[18px] justify-center tracking-[2.7px] xs:tracking-[3.375px] uppercase xs:justify-start xs:text-xl'>
           <span className='font-bold opacity-25'>01</span>
           Pick your destination
         </h2>
       </div>
-      <div className='flex justify-center items-center mb-8'>
+      <div className='flex justify-center items-center mb-8 xs:mb-12'>
         {moons.map((item) => {
           if (item.id === selectedMoon) {
             return (
@@ -63,22 +63,24 @@ const Moons = () => {
                 key={item.id}
                 src={item.image}
                 alt={item.name}
-                className='w-[200px] h-[200px] '
+                className='w-[200px] h-[200px] xs:w-[300px] xs:h-[300px]'
               />
             )
           }
         })}
       </div>
-      <div className='flex flex-col'>
-        <ul className='flex gap-[26px] items-center justify-center font-barlow-condensed tracking-[2.362px] text-sm mb-5'>
+      <div className='flex flex-col xs:px-14'>
+        <ul className='flex gap-[26px] items-center justify-center font-barlow-condensed tracking-[2.362px] text-sm xs:text-base mb-5 cursor-pointer'>
           {moons.map((item) => (
             <li
               key={item.id}
               onClick={() => setSelectedMoon(item.id)}
-              className={classNames('relative ', {
-                'before:content-[""] before:block before:absolute before:bg-white before:h-1 before:w-full before:-bottom-2 before:left-0':
-                  item.id === selectedMoon,
-              })}
+              className={classNames(
+                'border-b-3 border-b-transparent hover:border-b-white/50 pb-3 transition-colors',
+                {
+                  ' !border-b-white': item.id === selectedMoon,
+                }
+              )}
             >
               <h3
                 className={classNames('text-lightBlue', {

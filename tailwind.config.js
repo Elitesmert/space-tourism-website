@@ -19,9 +19,20 @@ export default {
       },
       screens: {
         xs: '426px',
+        md: '769px',
       },
     },
   },
   darkMode: 'class',
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        '.bg-y-0': { 'background-position-y': '0px' },
+        '.bg-y-380': { 'background-position-y': '-380px' },
+      }
+
+      addUtilities(newUtilities)
+    },
+  ],
 }
